@@ -1,0 +1,20 @@
+#!/bin/bash
+
+notes_dir="${HOME}/Documents/Notes"
+
+mkdir -p "${notes_dir}"
+files=()
+files+=("New note")
+for file in $(ls "${notes_dir}"); do
+  files+=($file)
+done
+
+file=$(printf '%s\n' "${files[@]}"| wofi -d -p Notes)
+if [[ "$file" = "" ]]; then
+  exit
+elif [[ "$file" = "New note" ]]; then
+  echo "New note"
+  kitty -e nvim "${notes_dir}/$(date +%F_%H-%M-%S).md"
+else
+  kitty -e nvim "${notes_dir}/$file"
+fi
