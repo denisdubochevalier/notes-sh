@@ -9,7 +9,7 @@ for file in $(ls "${notes_dir}"); do
   files+=($file)
 done
 
-file=$(printf '%s\n' "${files[@]}"| wofi -d -p Notes)
+file=$(printf '%s\n' "${files[@]}"| wmenu -N272727 -nc2d89c -M668f31 -mc2d89c -S668f31 -sc2d89c -p Notes)
 if [[ "$file" = "" ]]; then
   exit
 elif [[ "$file" = "New note" ]]; then

@@ -1,5 +1,5 @@
 # notes-sh
 
-Small note taking script with wofi and nvim
+Small note taking script with wmenu and nvim
 
-Launches a custom wofi that allows to create a note or edit an existing one.
+Launches a custom wmenu that allows to create a note or edit an existing one.
