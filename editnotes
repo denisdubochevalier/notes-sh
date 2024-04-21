@@ -14,7 +14,7 @@ if [[ "$file" = "" ]]; then
   exit
 elif [[ "$file" = "New note" ]]; then
   echo "New note"
-  kitty -e nvim "${notes_dir}/$(date +%F_%H-%M-%S).md"
+  foot -e nvim "${notes_dir}/$(date +%F_%H-%M-%S).md"
 else
-  kitty -e nvim "${notes_dir}/$file"
+  foot -e nvim "${notes_dir}/$file"
 fi
